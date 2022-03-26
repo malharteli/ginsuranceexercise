@@ -1,0 +1,37 @@
+server:
+  port: 7071
+  servlet:
+
+
+management:
+  health:
+    livenessState.enabled: true
+    readinessState.enabled: true
+  endpoint.health.probes.enabled: true
+
+spring:
+  application:
+    name: USER-SERVICE, nec-common, nec-app
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: configserver
+      profile: dev
+      fail-fast: true
+  jackson:
+    default-property-inclusion: NON_NULL
+    deserialization:
+      FAIL_ON_IGNORED_PROPERTIES: false
+    serialization:
+      INDENT_OUTPUT: false
+      WRITE_DATES_AS_TIMESTAMPS: false
+      WRITE_BIGDECIMAL_AS_PLAIN: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: false
+    register-with-eureka: true
+  instance:
+    lease-renewal-interval-in-seconds: 10

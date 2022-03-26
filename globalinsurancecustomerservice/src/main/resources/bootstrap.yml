@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: mysqlsecret, mysecret
+  cloud:
+    vault:
+      token: s.ENhwYKadiTnUPo4ExwBbUAuS
+      scheme: http
+      kv:
+        enabled: true
+    config:
+      discovery:
+        enabled: true # This is required
+        service-id: CONFIGSERVER # Config Server's eureka registry name
+      enabled: true # This is default true already

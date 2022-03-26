@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloudoauth2apigateway" />
+        <module name="configserver" />
+        <module name="eurekaerver" />
+        <module name="globalinsurancecamunda" />
+        <module name="userservice (1)" />
+        <module name="userservice" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloudoauth2apigateway" target="1.8" />
+      <module name="configserver" target="1.8" />
+      <module name="eurekaerver" target="1.8" />
+      <module name="globalinsurancecamunda" target="1.8" />
+      <module name="policydockerapi" target="1.5" />
+      <module name="userservice" target="1.8" />
+      <module name="userservice (1)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cloudoauth2apigateway" options="-parameters" />
+      <module name="configserver" options="-parameters" />
+      <module name="eurekaerver" options="-parameters" />
+      <module name="policydockerapi" options="-parameters" />
+      <module name="userservice" options="-parameters" />
+    </option>
+  </component>
+</project>

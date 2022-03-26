@@ -1,0 +1,75 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      default-filters:
+        - TokenRelay
+      routes:
+        - id: global-insurance-id
+          uri: lb://global-insurance
+          predicates:
+            - Path=/claims/**
+          filters:
+            - RemoveRequestHeader=Cookie
+            - AuthFilter
+        - id: users-sign-in
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/signIn
+        - id: configserver
+          uri: lb://CONFIGSERVER
+          predicates:
+            - Path=/config/**
+        - id: customerapi
+          uri: lb://CUSTOMERAPI
+          predicates:
+            - Path=/customerapi/**
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            token-uri: http://localhost:8080/auth/realms/GlobalInsurance/protocol/openid-connect/token
+            authorization-uri: http://localhost:8080/auth/realms/GlobalInsurance/protocol/openid-connect/auth
+            userinfo-uri: http://localhost:8080/auth/realms/GlobalInsurance/protocol/openid-connect/userinfo
+            user-name-attribute: preferred_username
+        registration:
+          assessor-client:
+            provider: keycloak
+            client-id: assessorclient
+            client-secret: JTLjyc59KxSpFdlJ73xInJN4DxSlArj0
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+          customer-client:
+            provider: keycloak
+            client-id: customerclient
+            client-secret: BWstzYUf1xXcZi72dyPxxSyogBwNHcj3
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+          admin-client:
+            provider: keycloak
+            client-id: adminclient
+            client-secret: 5hcWz53DHFxSGSQNXsAWEhHJ9Uh7itDL
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+
+
+server.port: 7060
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: gateway
+
+logging.level:
+  org.springframework.cloud.gateway: DEBUG
+  org.springframework.security: DEBUG
+  org.springframework.web.reactive.function.client: TRACE

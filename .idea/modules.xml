@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/globalinsurancegateway/cloudoauth2apigateway.iml" filepath="$PROJECT_DIR$/globalinsurancegateway/cloudoauth2apigateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configserver/configserver.iml" filepath="$PROJECT_DIR$/configserver/configserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaerver/eurekaerver.iml" filepath="$PROJECT_DIR$/eurekaerver/eurekaerver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/globalinsurance.iml" filepath="$PROJECT_DIR$/.idea/globalinsurance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/globalinsurancecamunda/globalinsurancecamunda.iml" filepath="$PROJECT_DIR$/globalinsurancecamunda/globalinsurancecamunda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/globalinsuranceuser-service/userservice.iml" filepath="$PROJECT_DIR$/globalinsuranceuser-service/userservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/globalinsurancecustomerservice/userservice (1).iml" filepath="$PROJECT_DIR$/globalinsurancecustomerservice/userservice (1).iml" />
+    </modules>
+  </component>
+</project>

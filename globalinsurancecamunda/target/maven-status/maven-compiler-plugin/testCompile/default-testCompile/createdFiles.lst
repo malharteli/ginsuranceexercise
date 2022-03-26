@@ -1,0 +1,4 @@
+com\example\globalinsurancecamunda\ProcessScenarioTest.class
+com\example\globalinsurancecamunda\InMemoryH2Test.class
+com\example\globalinsurancecamunda\ProcessTestCoverageProcessEnginePlugin.class
+com\example\globalinsurancecamunda\ProcessUnitTest.class
